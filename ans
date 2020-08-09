@@ -1,10 +1,12 @@
 ## My try
 
+https://www.db-fiddle.com/f/nGZ6pvjyCpdWTYHVk7WaZd/0
+
 select Name
 from Employee
 where Id in
 (
-select Id
+select ManagerId
 from Employee
 group by ManagerId
 having count(Id) >=5)
