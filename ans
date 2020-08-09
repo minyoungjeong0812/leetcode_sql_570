@@ -1,0 +1,10 @@
+## My try
+
+select Name
+from Employee
+where Id in
+(
+select Id
+from Employee
+group by ManagerId
+having count(Id) >=5)
